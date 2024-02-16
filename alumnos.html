@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="alumnos.css">
+    <title>Base de datos de alumnos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Base de datos de alumnos</h1>
+        <form id="alumnoForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+
+            
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" required>
+
+            <label for="materias">Materias Disponibles: </label>
+
+            <select id="materias-select"> Seleccionar materia:
+                <option value="matematicas">Español</option>
+                <option value="historia">Historia</option>
+                <option value="ciencias">Inglés</option>
+                <option value="ingles">Computación</option>
+            </select>
+      
+            <p></p>
+            <label for="calificaciones">Calificaciones:</label>
+            <input type="text" id="calificaciones" required>
+
+            <button type="button" onclick="inscribirAlumno()">Inscribir Alumno</button>
+        </form>
+
+        <div>
+            <h2>Listado de Alumnos</h2>
+            <ul id="listaAlumnos"></ul>
+        </div>
+
+        <div>
+            <h2>Gestión de Grupos</h2>
+            <label for="grupoSelect">Selecciona un grupo:</label>
+            <select id="grupoSelect" onchange="mostrarAlumnosPorGrupo()">
+                <option value="todos">Todos los Alumnos</option>
+            </select>
+
+            <h3>Listado de Grupos</h3>
+            <ul id="listaGrupos"></ul>
+        </div>
+
+        <div>
+            <h2>Acciones Adicionales</h2> 
+            <button onclick="buscarPorNombre()">Buscar por Nombre</button>
+            <button onclick="buscarPorApellido()">Buscar por Apellido</button>
+            <button onclick="calcularPromedioAlumno()">Obtener Promedio de Alumno</button>
+            <br>
+            <button onclick="calcularPromedioGrupo()">Obtener Promedio del Grupo</button>
+            <button onclick="ordenarAlumnos('asc')">Ordenar Alumnos Ascendente por Calificación</button>
+            <button onclick="ordenarAlumnos('desc')">Ordenar Alumnos Descendente por Calificación</button>
+            <button onclick="ordenarAlumnosAlfabeticamente()">Ordenar Alumnos Alfabéticamente</button>
+        </div>
+    </div>
+
+    <script src="alumnos.js"></script>
+</body>
+</html>
